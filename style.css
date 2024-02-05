@@ -1,0 +1,51 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vh;
+  height: 100vh;
+  background-color: #151320;
+}
+
+.box {
+  margin: auto;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.box::after {
+  content: "";
+  width: 150%;
+  height: 150%;
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  background-image: conic-gradient(#04b0ee 20deg, transparent 120deg);
+  animation: spine 4s infinite linear;
+  z-index: -1;
+}
+
+@keyframes spine {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.box::before {
+  content: "";
+  width: 94%;
+  height: 94%;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  background-color: #201825;
+  z-index: 0;
+}
